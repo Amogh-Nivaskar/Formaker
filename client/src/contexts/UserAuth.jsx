@@ -87,7 +87,7 @@ function AuthProvider({ children }) {
 
       if (res.status === 200) {
         const { id, name } = res.data.user;
-        // dispatch({ type: "authUser", payload: { name, id } });
+        dispatch({ type: "authUser", payload: { name, id } });
       } else if (res.status === 401) {
         console.log("token expired");
         dispatch({ type: "logout" });

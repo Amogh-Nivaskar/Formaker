@@ -45,7 +45,7 @@ function App() {
           <Route
             path="app"
             element={
-              <Protected key={"a"}>
+              <Protected render={"a"}>
                 <Home />
               </Protected>
             }
@@ -53,7 +53,7 @@ function App() {
           <Route
             path="formDetails/:formId"
             element={
-              <Protected key={"b"}>
+              <Protected render={"b"}>
                 <ViewFormDetails />
               </Protected>
             }
@@ -61,7 +61,7 @@ function App() {
             <Route
               path="submissions"
               element={
-                <Protected key={"c"}>
+                <Protected render={"c"}>
                   <PerPersonSubmissions />
                 </Protected>
               }
@@ -69,7 +69,7 @@ function App() {
             <Route
               path="stats"
               element={
-                <Protected key={"d"}>
+                <Protected render={"d"}>
                   <PerQuestionStats />
                 </Protected>
               }
@@ -78,7 +78,7 @@ function App() {
             <Route
               path="sendByEmail"
               element={
-                <Protected key={"e"}>
+                <Protected render={"e"}>
                   <SendByEmail />
                 </Protected>
               }
@@ -88,7 +88,7 @@ function App() {
           <Route
             path="newForm"
             element={
-              <Protected key={"f"}>
+              <Protected render={"f"}>
                 <NewForm />
               </Protected>
             }

@@ -2,7 +2,7 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserAuth";
 import { useEffect } from "react";
 
-function Protected({ children, key }) {
+function Protected({ children, render }) {
   const { user, authUser } = useAuth();
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function Protected({ children, key }) {
     }
 
     checkAuth();
-  }, [authUser, key]);
+  }, [render]);
 
   if (!user.isAuthenticated) {
     // console.log("not authenticated");
