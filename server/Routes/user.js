@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const User = require("../models/user");
 const { verifyToken } = require("../middleware/auth");
+const bcrypt = require("bcrypt");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -16,7 +17,9 @@ router.post("/signup", async (req, res) => {
         .status(400)
         .json({ message: "User With Email Already Exists" });
 
-    const user = new User({ name, email, password });
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    const user = new User({ name, email, password: hashedPassword });
 
     await user.save();
 
@@ -54,8 +57,12 @@ router.post("/login", async (req, res) => {
     if (!existingUser)
       return res.status(404).json({ message: "User Not Found" });
 
+    const isPasswordCorrect = bcrypt.compareSync(
+      password,
+      existingUser.password
+    );
     console.log(existingUser);
-    if (password !== existingUser.password)
+    if (!isPasswordCorrect)
       return res.status(401).json({ message: "Email or Password Incorrect" });
 
     const accessToken = jwt.sign(
@@ -66,7 +73,7 @@ router.post("/login", async (req, res) => {
       },
       process.env.ACCESS_KEY,
       {
-        expiresIn: "10s",
+        expiresIn: "1d",
       }
     );
 
