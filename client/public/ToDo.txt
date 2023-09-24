@@ -1,0 +1,25 @@
+make redirect page after submission //
+
+chart font resizing
+add respnsive design -> make charts label responsive 
+add encryption of password
+
+generate better access key for jwt token
+
+
+
+bugs
+fix routing at '/' route.
+
+
+DONE:
+make cursor default on disabled check box and radio button 
+add custum checkbox and radio button for NewForm page
+add input field to give response page in submissions
+add num column to details table
+add chart for dropdown
+make options to show both bar and pie in multiple choice 
+add the accepting feacture at server and render page for not accepting
+check empty field submission of form
+give session while signup
+add session expiry

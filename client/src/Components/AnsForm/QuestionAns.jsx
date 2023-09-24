@@ -1,0 +1,76 @@
+import AnsOptions from "./AnsOptions";
+import { useDispatch, useSelector } from "react-redux";
+import { getAns, getTriedSubmitting, setAns } from "../../store/slices/ansForm";
+import { BsExclamationCircle } from "react-icons/bs";
+import TextArea from "../../ui/TextArea";
+
+function QuestionAns({ questionIdx, questionObj }) {
+  const { question, type, options, required } = questionObj;
+  const ans = useSelector(getAns(questionIdx));
+  const triedSubmitting = useSelector(getTriedSubmitting);
+
+  const dispatch = useDispatch();
+  const hasOptions =
+    type === "multiple-choice" || type === "check-boxes" || type === "dropdown";
+
+  const hasMessage = triedSubmitting && required && ans === undefined;
+
+  function handleChangedInput(e) {
+    if (e.target.value === "") {
+      dispatch(setAns({ ansIdx: questionIdx, ans: undefined }));
+    } else {
+      dispatch(setAns({ ansIdx: questionIdx, ans: e.target.value }));
+    }
+  }
+
+  return (
+    <div
+      className={`flex flex-col border-2 ${
+        hasMessage && "border-rose-500"
+      } mt-9 p-3 shadow-md rounded-md bg-white`}
+    >
+      <p className="text-xl border-0 m-3">
+        {question || (
+          <span className="italic text-slate-500">Empty Question</span>
+        )}{" "}
+        {required && <span className="text-rose-500 px-1">*</span>}
+      </p>
+      {hasOptions && (
+        <AnsOptions type={type} options={options} ansIdx={questionIdx} />
+      )}
+
+      {type === "short-ans" && (
+        <input
+          className={`h-9 border-b-2 w-1/3 m-3 text-lg focus:outline-none focus:border-indigo-500 ${
+            hasMessage && "border-rose-500"
+          } `}
+          placeholder="Your Answer"
+          value={ans}
+          onChange={(e) => handleChangedInput(e)}
+        />
+      )}
+
+      {type === "long-ans" && (
+        <TextArea
+          classes={
+            "focus:border-indigo-500 w-3/4 border-b-2 h-9 m-3 bg-white text-lg"
+          }
+          placeholder="Your Answer"
+          value={ans}
+          onChange={(e) => handleChangedInput(e)}
+        />
+      )}
+
+      {hasMessage && (
+        <div className="flex m-3 items-center text-rose-500 ">
+          <span className="text-2xl">
+            <BsExclamationCircle />
+          </span>
+          <span className="ml-3 text-lg">This is a required question</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default QuestionAns;
