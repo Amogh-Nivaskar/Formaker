@@ -46,6 +46,11 @@ function AuthProvider({ children }) {
           return error.response;
         });
 
+      if (res.status === 200) {
+        const { name, id } = res.data.user;
+        dispatch({ type: "signUp", payload: { name, id } });
+      }
+
       return res;
     } catch (error) {
       console.log(error);
