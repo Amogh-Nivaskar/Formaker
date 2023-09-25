@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const verifyToken = (req, res, next) => {
   try {
     const token = req.cookies?.token;
+    console.log(req.cookies);
     if (token !== undefined) {
       const user = jwt.verify(token, process.env.ACCESS_KEY);
       req.user = user;
