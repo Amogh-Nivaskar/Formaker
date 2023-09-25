@@ -7,8 +7,10 @@ const verifyToken = (req, res, next) => {
       const user = jwt.verify(token, process.env.ACCESS_KEY);
       req.user = user;
       console.log(user);
+      next();
+    } else {
+      throw new Error("No Token");
     }
-    next();
   } catch (error) {
     console.log("error in verifyToken");
     console.log(error);
