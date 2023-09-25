@@ -77,6 +77,7 @@ router.post("/login", async (req, res) => {
       }
     );
 
+    console.log("token", accessToken);
     res.cookie("token", accessToken, {
       path: "/",
       expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
