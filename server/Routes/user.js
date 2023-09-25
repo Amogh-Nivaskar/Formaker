@@ -73,12 +73,14 @@ router.post("/login", async (req, res) => {
       },
       process.env.ACCESS_KEY,
       {
-        path: "/",
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
+        expiresIn: "1d",
       }
     );
 
-    res.cookie("token", accessToken);
+    res.cookie("token", accessToken, {
+      path: "/",
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
+    });
 
     res.status(200).json({
       message:
