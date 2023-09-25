@@ -2,8 +2,6 @@ make redirect page after submission //
 
 chart font resizing
 add respnsive design -> make charts label responsive 
-add encryption of password
-
 generate better access key for jwt token
 
 
@@ -23,3 +21,4 @@ add the accepting feacture at server and render page for not accepting
 check empty field submission of form
 give session while signup
 add session expiry
+add encryption of password
