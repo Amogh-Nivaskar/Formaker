@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
       password,
       existingUser.password
     );
-    console.log(existingUser);
+    console.log(isPasswordCorrect);
     if (!isPasswordCorrect)
       return res.status(401).json({ message: "Email or Password Incorrect" });
 
