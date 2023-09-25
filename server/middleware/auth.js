@@ -6,9 +6,9 @@ const verifyToken = (req, res, next) => {
     if (token !== undefined) {
       const user = jwt.verify(token, process.env.ACCESS_KEY);
       req.user = user;
-      console.log(user);
+      console.log("user", user);
     }
-    console.log(token);
+    console.log("token", token);
     next();
   } catch (error) {
     console.log("error in verifyToken");
