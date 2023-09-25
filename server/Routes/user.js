@@ -73,7 +73,8 @@ router.post("/login", async (req, res) => {
       },
       process.env.ACCESS_KEY,
       {
-        expiresIn: "1d",
+        path: "/",
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
       }
     );
 
