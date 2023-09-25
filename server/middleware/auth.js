@@ -8,6 +8,7 @@ const verifyToken = (req, res, next) => {
       req.user = user;
       console.log(user);
     }
+    console.log(token);
     next();
   } catch (error) {
     console.log("error in verifyToken");
