@@ -34,7 +34,7 @@ app.use("/ansForm", ansFormRoutes);
 const PORT = process.env.PORT || 8080;
 
 mongoose
-  .connect(`${process.env.MONGODB_URL}`)
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("DB connection succesfull");
     app.listen(PORT, () => console.log(`Server is running on PORT: ${PORT}`));
