@@ -83,7 +83,7 @@ router.post("/login", async (req, res) => {
       expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
       sercure: false,
       sameSite: "lax",
-      domain: "onrender.com",
+      domain: "formaker-server.onrender.com",
     });
 
     res.status(200).json({
