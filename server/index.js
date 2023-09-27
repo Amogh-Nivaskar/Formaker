@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://formaker-6ib3.vercel.app",
+    origin: ["https://formaker-6ib3.vercel.app", "http://localhost:5173"],
   })
 );
 
