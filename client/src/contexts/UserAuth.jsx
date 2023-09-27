@@ -60,7 +60,7 @@ function AuthProvider({ children }) {
   async function login(email, password) {
     try {
       const res = await axios
-        .post(`/login`, { email, password })
+        .post(`${BASE_URL}/login`, { email, password })
         .catch((error) => {
           return error.response;
         });
@@ -80,7 +80,7 @@ function AuthProvider({ children }) {
   async function authUser() {
     try {
       const res = await axios
-        .post(`/authUser`, null, {
+        .post(`${BASE_URL}/authUser`, null, {
           withCredentials: true,
         })
         .catch((error) => error.response);
