@@ -60,7 +60,7 @@ function AuthProvider({ children }) {
   async function login(email, password) {
     try {
       const res = await axios
-        .post(`${BASE_URL}/login`, { email, password })
+        .post(`/login`, { email, password })
         .catch((error) => {
           return error.response;
         });
