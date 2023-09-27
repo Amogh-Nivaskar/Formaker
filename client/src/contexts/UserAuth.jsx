@@ -80,7 +80,7 @@ function AuthProvider({ children }) {
   async function authUser() {
     try {
       const res = await axios
-        .post(`${BASE_URL}/authUser`, null, {
+        .post(`/authUser`, null, {
           withCredentials: true,
         })
         .catch((error) => error.response);
