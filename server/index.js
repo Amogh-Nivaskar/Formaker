@@ -25,7 +25,9 @@ app.use(
     origin: [process.env.CLIENT_URL, "http://localhost:5173"],
   })
 );
-
+app.get("/temp", (req, res) => {
+  return res.status(200).json({ message: "Heres your data" });
+});
 app.use("/", userRoutes);
 app.use("/questionForm", verifyToken, questionFormRoutes);
 app.use("/sendEmail", verifyToken, sendEmailRoutes);
