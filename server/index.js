@@ -19,12 +19,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
-
-// {
-//   credentials: true,
-//   origin: "https://formaker-6ib3.vercel.app",
-// }
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://formaker-6ib3.vercel.app",
+  })
+);
 
 app.use("/", userRoutes);
 app.use("/questionForm", verifyToken, questionFormRoutes);
