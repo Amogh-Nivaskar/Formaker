@@ -22,17 +22,17 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: [process.env.CLIENT_URL, "http://localhost:5173"],
+    origin: process.env.CLIENT_URL,
   })
 );
 
-app.get("/", (req, res) => {
-  return res.status(200).json({ message: "Heres your data" });
-});
+// app.get("/", (req, res) => {
+//   return res.status(200).json({ message: "Heres your data" });
+// });
 
-app.get("/trial", (req, res) => {
-  return res.status(200).json({ message: "Heres your trial data" });
-});
+// app.get("/trial", (req, res) => {
+//   return res.status(200).json({ message: "Heres your trial data" });
+// });
 
 app.use("/", userRoutes);
 app.use("/questionForm", verifyToken, questionFormRoutes);
@@ -50,21 +50,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-// "headers": [
-//   {
-//    "src": "/(.*)",
-//     "headers": [
-//       { "key": "Access-Control-Allow-Credentials", "value": "true" },
-//       { "key": "Access-Control-Allow-Origin", "value": "*" },
-//       {
-//         "key": "Access-Control-Allow-Methods",
-//         "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-//       },
-//       {
-//         "key": "Access-Control-Allow-Headers",
-//         "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-//       }
-//     ]
-//   }
-// ]
