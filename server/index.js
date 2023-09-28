@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   return res.status(200).json({ message: "Heres your data" });
 });
 
+app.get("/trial", (req, res) => {
+  return res.status(200).json({ message: "Heres your trial data" });
+});
+
 app.use("/", userRoutes);
 // app.use("/questionForm", verifyToken, questionFormRoutes);
 // app.use("/sendEmail", verifyToken, sendEmailRoutes);
