@@ -26,14 +26,14 @@ app.use(
   })
 );
 
-app.get("/temp", (req, res) => {
+app.get("/", (req, res) => {
   return res.status(200).json({ message: "Heres your data" });
 });
 
-app.use("/", userRoutes);
-app.use("/questionForm", verifyToken, questionFormRoutes);
-app.use("/sendEmail", verifyToken, sendEmailRoutes);
-app.use("/ansForm", ansFormRoutes);
+// app.use("/", userRoutes);
+// app.use("/questionForm", verifyToken, questionFormRoutes);
+// app.use("/sendEmail", verifyToken, sendEmailRoutes);
+// app.use("/ansForm", ansFormRoutes);
 
 const PORT = process.env.PORT || 8080;
 
