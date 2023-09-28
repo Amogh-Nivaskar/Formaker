@@ -16,7 +16,8 @@ const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
 const UserAuthContext = createContext();
 
 function authUserAction(state, action) {
-  const { id, name } = action.payload;
+  const { id, name, token } = action.payload;
+  localStorage.setItem("token", token);
   return { ...state, id, name, isAuthenticated: true };
 }
 
@@ -29,6 +30,7 @@ function reducer(state, action) {
     case "authUser":
       return authUserAction(state, action);
     case "logout":
+      localStorage.removeItem("token");
       return initialState;
     default:
       return state;
@@ -47,8 +49,8 @@ function AuthProvider({ children }) {
         });
 
       if (res.status === 200) {
-        const { name, id } = res.data.user;
-        dispatch({ type: "signUp", payload: { name, id } });
+        const { name, id, token } = res.data.user;
+        dispatch({ type: "signUp", payload: { name, id, token } });
       }
 
       return res;
@@ -66,8 +68,9 @@ function AuthProvider({ children }) {
         });
 
       if (res.status === 200) {
-        const { name, id } = res.data.user;
-        dispatch({ type: "login", payload: { name, id } });
+        const { name, id, token } = res.data.user;
+        console.log(token);
+        dispatch({ type: "login", payload: { name, id, token } });
         return res;
       }
 
@@ -79,15 +82,19 @@ function AuthProvider({ children }) {
 
   async function authUser() {
     try {
+      const token = localStorage.getItem("token");
+      // console.log(token);
       const res = await axios
         .post(`${BASE_URL}/authUser`, null, {
-          withCredentials: true,
+          headers: {
+            Authorization: `${token}`,
+          },
         })
         .catch((error) => error.response);
 
       if (res.status === 200) {
         const { id, name } = res.data.user;
-        dispatch({ type: "authUser", payload: { name, id } });
+        dispatch({ type: "authUser", payload: { name, id, token } });
       } else if (res.status === 401) {
         console.log("token expired");
         dispatch({ type: "logout" });
@@ -99,8 +106,11 @@ function AuthProvider({ children }) {
 
   async function logout() {
     try {
+      const token = localStorage.getItem("token");
       const res = await axios.post(`${BASE_URL}/logout`, null, {
-        withCredentials: true,
+        headers: {
+          Authorization: `${token}`,
+        },
       });
 
       if (res.status === 200) dispatch({ type: "logout" });
@@ -109,14 +119,8 @@ function AuthProvider({ children }) {
     }
   }
 
-  function internalLogout() {
-    dispatch({ type: "logout" });
-  }
-
   return (
-    <UserAuthContext.Provider
-      value={{ user, signUp, login, authUser, logout, internalLogout }}
-    >
+    <UserAuthContext.Provider value={{ user, signUp, login, authUser, logout }}>
       {children}
     </UserAuthContext.Provider>
   );

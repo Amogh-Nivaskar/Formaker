@@ -37,11 +37,9 @@ router.post("/signup", async (req, res) => {
       }
     );
 
-    res.cookie("token", accessToken);
-
     return res.status(200).json({
       message: "user created successfully ",
-      user: { name, email, id: user._id },
+      user: { name, email, id: user._id, token: accessToken },
     });
   } catch (error) {
     console.log(error);
@@ -78,18 +76,22 @@ router.post("/login", async (req, res) => {
     );
 
     console.log("accessToken", accessToken);
-    res.cookie("token", accessToken, {
-      path: "/",
-      expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
-      sercure: true,
-      sameSite: "none",
-      domain: "formaker-server.onrender.com",
-    });
+    // res.cookie("token", accessToken, {
+    //   path: "/",
+    //   expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
+    //   sercure: true,
+    //   sameSite: "none",
+    //   domain: "formaker-server.onrender.com",
+    // });
 
     res.status(200).json({
       message:
         "User is logged in successfully and access token is sent in cookie",
-      user: { name: existingUser.name, id: existingUser._id },
+      user: {
+        name: existingUser.name,
+        id: existingUser._id,
+        token: accessToken,
+      },
     });
   } catch (error) {
     console.log(error);
@@ -112,7 +114,6 @@ router.post("/authUser", verifyToken, async (req, res) => {
 
 router.post("/logout", (req, res) => {
   try {
-    res.clearCookie("token");
     return res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     console.log(error);

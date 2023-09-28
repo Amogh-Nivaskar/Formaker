@@ -62,8 +62,10 @@ function AnsForm() {
     if (canSubmit) {
       console.log("submitting form");
       const res = await submitForm(answers, formId);
-      if (res.status === 200) {
+      console.log(res);
+      if (res.status === 201) {
         dispatch(setTriedSubmitting(false));
+        console.log("submitted");
         navigate("/ansForm/submitted");
       }
       if (res.status === 302) {

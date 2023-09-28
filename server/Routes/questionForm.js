@@ -43,8 +43,11 @@ router.post("/formStatus/:formId", async (req, res) => {
 
 router.get("/forms", async (req, res) => {
   try {
+    console.log("getting forms");
     const { id } = req.user;
+    console.log("req.user", req.user);
     const user = await User.findById(id).populate("questionForms");
+    console.log(user);
     const forms = user.questionForms;
 
     return res.status(200).json({ message: "Returned Forms", forms });

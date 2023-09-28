@@ -7,11 +7,9 @@ import { Provider } from "react-redux";
 import { AuthProvider } from "./contexts/UserAuth.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <AuthProvider>
+      <App />
+    </AuthProvider>
+  </Provider>
 );

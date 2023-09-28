@@ -34,10 +34,7 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
   // Website you wish to allow to connect
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://formaker-6ib3.vercel.app"
-  );
+  res.setHeader("Access-Control-Allow-Origin", `${process.env.CLIENT_URL}`);
 
   // Request methods you wish to allow
   res.setHeader(
@@ -48,7 +45,7 @@ app.use((req, res, next) => {
   // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
+    "X-Requested-With,content-type,Authorization"
   );
 
   // Set to true if you need the website to include cookies in the requests sent

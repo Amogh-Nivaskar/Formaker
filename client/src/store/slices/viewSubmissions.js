@@ -32,12 +32,15 @@ const submissionsSlice = createSlice({
 
 export async function sendFormLink(link, emails, subject, body) {
   try {
+    const token = localStorage.getItem("token");
     const res = await axios
       .post(
         `${BASE_URL}/sendEmail`,
         { link, emails, subject, body },
         {
-          withCredentials: true,
+          headers: {
+            Authorization: `${token}`,
+          },
         }
       )
       .catch((error) => error.response);

@@ -133,31 +133,45 @@ const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
 export async function postRefinedForm(refinedForm) {
   try {
     console.log(refinedForm);
-  const res = await axios.post(`${BASE_URL}/questionForm`, refinedForm, {
-    withCredentials: true,
-  }).catch(error => error.response)
-  return res;
+    const token = localStorage.getItem("token");
+    const res = await axios
+      .post(`${BASE_URL}/questionForm`, refinedForm, {
+        headers: {
+          Authorization: `${token}`,
+        },
+      })
+      .catch((error) => error.response);
+    return res;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-  
 }
 
 export async function deleteForm(formId) {
+  const token = localStorage.getItem("token");
   const res = await axios.delete(`${BASE_URL}/questionForm/${formId}`, null, {
-    withCredentials: true,
+    headers: {
+      Authorization: `${token}`,
+    },
   });
 
   return res;
 }
 
 export async function getFormsList() {
+  const token = localStorage.getItem("token");
   try {
+    console.log(token);
     const res = await axios
-      .get(`${BASE_URL}/questionForm/forms`, null, {
-        withCredentials: true,
+      .get(`${BASE_URL}/questionForm/forms`, {
+        headers: {
+          Authorization: `${token}`,
+        },
       })
-      .catch((error) => error.response);
+      .catch((error) => {
+        console.log(error);
+        return error.response;
+      });
     if (res.status === 200) {
       const forms = res.data.forms;
       return forms;
@@ -167,8 +181,11 @@ export async function getFormsList() {
 }
 
 export async function getFormFromServer(formId) {
-  const res = await axios.get(`${BASE_URL}/questionForm/${formId}`, null, {
-    withCredentials: true,
+  const token = localStorage.getItem("token");
+  const res = await axios.get(`${BASE_URL}/questionForm/${formId}`, {
+    headers: {
+      Authorization: token,
+    },
   });
 
   const form = res.data.form;
@@ -176,11 +193,14 @@ export async function getFormFromServer(formId) {
 }
 
 export async function toggleAcceptingStatus(formId) {
+  const token = localStorage.getItem("token");
   const res = await axios.post(
     `${BASE_URL}/questionForm/formStatus/${formId}`,
     null,
     {
-      withCredentials: true,
+      headers: {
+        Authorization: `${token}`,
+      },
     }
   );
   if (res.status === 200) return true;
