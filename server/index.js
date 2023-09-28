@@ -19,12 +19,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: [process.env.CLIENT_URL, "http://localhost:5173"],
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    origin: [process.env.CLIENT_URL, "http://localhost:5173"],
+  })
+);
 
 app.get("/", (req, res) => {
   return res.status(200).json({ message: "Heres your data" });
@@ -34,10 +34,10 @@ app.get("/trial", (req, res) => {
   return res.status(200).json({ message: "Heres your trial data" });
 });
 
-// app.use("/", userRoutes);
-// app.use("/questionForm", verifyToken, questionFormRoutes);
-// app.use("/sendEmail", verifyToken, sendEmailRoutes);
-// app.use("/ansForm", ansFormRoutes);
+app.use("/", userRoutes);
+app.use("/questionForm", verifyToken, questionFormRoutes);
+app.use("/sendEmail", verifyToken, sendEmailRoutes);
+app.use("/ansForm", ansFormRoutes);
 
 const PORT = process.env.PORT || 8080;
 
