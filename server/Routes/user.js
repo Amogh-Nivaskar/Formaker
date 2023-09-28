@@ -81,7 +81,7 @@ router.post("/login", async (req, res) => {
     res.cookie("token", accessToken, {
       path: "/",
       expires: new Date(Date.now() + 1000 * 60 * 60 * 24), // 1 day
-      sercure: false,
+      sercure: true,
       sameSite: "none",
       domain: "formaker-server.onrender.com",
     });
