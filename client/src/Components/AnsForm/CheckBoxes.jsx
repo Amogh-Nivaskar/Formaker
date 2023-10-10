@@ -20,6 +20,7 @@ function CheckBoxes({ options, ansIdx }) {
       {options.map((option, idx) => {
         return (
           <CheckBox
+            type={"show-ans"}
             option={option}
             idx={idx}
             selected={selected}

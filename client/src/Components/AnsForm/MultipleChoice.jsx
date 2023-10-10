@@ -5,7 +5,13 @@ function MultipleChoice({ options, ansIdx }) {
     <div className="flex flex-col gap-3">
       {options.map((option, idx) => {
         return (
-          <RadioButton ansIdx={ansIdx} option={option} idx={idx} key={idx} />
+          <RadioButton
+            type={"show-ans"}
+            ansIdx={ansIdx}
+            option={option}
+            idx={idx}
+            key={idx}
+          />
         );
       })}
     </div>

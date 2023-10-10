@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getAns, setAns } from "../store/slices/ansForm";
 
-function RadioButton({ ansIdx, option, idx, disabled = false, answer }) {
+function RadioButton({ ansIdx, option, idx, disabled = false, type, answer }) {
   let ans = useSelector(getAns(ansIdx));
   const dispatch = useDispatch();
 
@@ -33,9 +33,13 @@ function RadioButton({ ansIdx, option, idx, disabled = false, answer }) {
           <div className="h-3 w-3 rounded-full bg-indigo-500 transition-all duration-500 ease-in-out"></div>
         )}
       </div>
-      <p className="ml-4 text-lg cursor-default">
-        {option || <span className="italic text-slate-500">Empty Option</span>}
-      </p>
+      {type === "show-ans" && (
+        <p className="ml-4 text-lg cursor-default">
+          {option || (
+            <span className="italic text-slate-500">Empty Option</span>
+          )}
+        </p>
+      )}
     </div>
   );
 }

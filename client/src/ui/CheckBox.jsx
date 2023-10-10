@@ -1,4 +1,12 @@
-function CheckBox({ option, idx, selected, setSelected, disabled, answers }) {
+function CheckBox({
+  option,
+  idx,
+  selected,
+  setSelected,
+  disabled,
+  type,
+  answers,
+}) {
   let isSelected;
   if (disabled) {
     isSelected = answers?.includes(idx);
@@ -33,9 +41,13 @@ function CheckBox({ option, idx, selected, setSelected, disabled, answers }) {
           <span className="text-md text-white font-semibold ">&#10003;</span>
         )}
       </div>
-      <p className="ml-4 text-lg cursor-default">
-        {option || <span className="italic text-slate-500">Empty Option</span>}
-      </p>
+      {type === "show-ans" && (
+        <p className="ml-4 text-lg cursor-default">
+          {option || (
+            <span className="italic text-slate-500">Empty Option</span>
+          )}
+        </p>
+      )}
     </div>
   );
 }
