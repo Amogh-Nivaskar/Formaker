@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: process.env.CLIENT_URL,
+    origin: "https://65253cf1f436e318b7dd1a22--vocal-fudge-20e631.netlify.app/",
   })
 );
 // {
