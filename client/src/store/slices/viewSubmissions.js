@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import ansForm from "./ansForm";
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-
 const BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL;
 
 const initialState = {

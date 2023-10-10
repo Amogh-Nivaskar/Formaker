@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
+
 
 const initialState = {
   id: "",

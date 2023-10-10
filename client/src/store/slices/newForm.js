@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useAuth } from "../../contexts/UserAuth";
 
-axios.defaults.withCredentials = true;
 
 const initialQuestion = {
   question: "",
