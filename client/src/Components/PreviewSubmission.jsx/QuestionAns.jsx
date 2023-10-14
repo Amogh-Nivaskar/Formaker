@@ -39,6 +39,7 @@ function QuestionAns({ questionObj, answer }) {
                   idx={idx}
                   key={idx}
                   disabled={true}
+                  type={"show-ans"}
                 />
               );
             })}
@@ -54,6 +55,7 @@ function QuestionAns({ questionObj, answer }) {
                   key={idx}
                   disabled={true}
                   answers={answer}
+                  type={"show-ans"}
                 />
               );
             })}

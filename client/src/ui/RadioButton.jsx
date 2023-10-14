@@ -5,7 +5,7 @@ function RadioButton({ ansIdx, option, idx, disabled = false, type, answer }) {
   let ans = useSelector(getAns(ansIdx));
   const dispatch = useDispatch();
 
-  if (answer) ans = answer;
+  if (answer !== null && answer !== undefined) ans = answer;
 
   function handleClick() {
     if (ans === idx) {
@@ -17,7 +17,7 @@ function RadioButton({ ansIdx, option, idx, disabled = false, type, answer }) {
 
   return (
     <div
-      className="flex "
+      className="flex"
       onClick={() => {
         if (!disabled) {
           handleClick();
@@ -29,7 +29,7 @@ function RadioButton({ ansIdx, option, idx, disabled = false, type, answer }) {
           !disabled && "hover:ring-8 cursor-pointer"
         } ring-indigo-300 transition-all duration-300 ease-in-out`}
       >
-        {ans === idx && !disabled && (
+        {ans === idx && (
           <div className="h-3 w-3 rounded-full bg-indigo-500 transition-all duration-500 ease-in-out"></div>
         )}
       </div>

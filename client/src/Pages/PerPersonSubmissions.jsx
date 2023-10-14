@@ -37,7 +37,6 @@ function PerPersonSubmissions() {
 
   function calcWidth(s) {
     const w = (10 * s.toString().length).toString();
-    console.log(w);
     return w;
   }
 

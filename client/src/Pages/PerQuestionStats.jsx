@@ -15,7 +15,6 @@ function PerQuestionStats() {
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const questionIdx = useSelector(getQuestionIdx);
   const freq = useSelector(getOptionsFreq(questionIdx));
-  console.log(freq);
   const currentQuestion = questions[questionIdx];
   const dispatch = useDispatch();
 
