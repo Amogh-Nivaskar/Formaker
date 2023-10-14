@@ -11,6 +11,8 @@ function FormsTable({ displayForms, setDisplayForms }) {
   const [order, setOrder] = useState("ASC");
   const navigate = useNavigate();
 
+  const CLIENT_URL = import.meta.env.VITE_REACT_APP_CLIENT_URL;
+
   function sortByTitles() {
     if (order === "ASC") {
       const sortedForm = displayForms.sort((a, b) => {
@@ -142,9 +144,7 @@ function FormsTable({ displayForms, setDisplayForms }) {
               </td>
               <td className="p-3 tracking-wide text-center">
                 <button
-                  onClick={() =>
-                    copy(`http://localhost:5173/ansForm/${form._id}`)
-                  }
+                  onClick={() => copy(`${CLIENT_URL}/ansForm/${form._id}`)}
                   className={`hover:ring-8 ${
                     idx % 2 === 0 ? "ring-indigo-100" : "ring-indigo-200"
                   } active:text-indigo-600 rounded-full hover:transition-all duration-500 ease-in-out`}

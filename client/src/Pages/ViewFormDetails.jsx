@@ -25,6 +25,8 @@ function ViewFormDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const CLIENT_URL = import.meta.env.VITE_REACT_APP_CLIENT_URL;
+
   useEffect(() => {
     async function setFormObj() {
       setIsLoading(true);
@@ -98,7 +100,7 @@ function ViewFormDetails() {
 
         <div className="flex p-3">
           <button
-            onClick={() => copy(`http://localhost:5173/ansForm/${form._id}`)}
+            onClick={() => copy(`${CLIENT_URL}/ansForm/${form._id}`)}
             className={`hover:ring-4 active:ring-8 active:ring-indigo-400 hover:ring-indigo-200   rounded-full transition-all hover:duration-300 active:duration-150 ease-in-out`}
           >
             <MdContentCopy color="rgb(99 102 241)" fontSize={"1.7rem"} />
