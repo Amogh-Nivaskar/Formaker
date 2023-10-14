@@ -16,7 +16,6 @@ function SendByEmail() {
   const [emailsList, setEmailsList] = useState([]);
   const [sending, setSending] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [msg, setMsg] = useState("");
 
   function handleAddEmail() {
     if (isValidEmail(email)) {
