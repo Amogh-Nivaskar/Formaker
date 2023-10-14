@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
       theme: "default",
       product: {
         name: "Formaker",
-        link: "http://localhost:5173/app",
+        link: `${process.env.CLIENT_URL}/app`,
       },
     });
 

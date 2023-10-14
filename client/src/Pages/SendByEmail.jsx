@@ -46,6 +46,7 @@ function SendByEmail() {
 
   async function handleSendLink() {
     const CLIENT_URL = import.meta.env.VITE_REACT_APP_CLIENT_URL;
+    console.log(CLIENT_URL);
     const link = `${CLIENT_URL}/ansForm/${form._id}`;
     setHasSubmitted(true);
     if (emailsList.length > 0) {
@@ -167,7 +168,7 @@ function SendByEmail() {
           </div>
         )}
 
-        {hasSubmitted && (
+        {hasSubmitted && !sending && (
           <div className="flex justify-center">
             <span className="text-xl text-indigo-500">
               Form Links Sent Succesfully !!
