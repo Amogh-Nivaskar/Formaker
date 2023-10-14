@@ -46,7 +46,8 @@ function SendByEmail() {
   }
 
   async function handleSendLink() {
-    const link = `http://localhost:5173/ansForm/${form._id}`;
+    const CLIENT_URL = import.meta.env.VITE_REACT_APP_CLIENT_URL;
+    const link = `${CLIENT_URL}/ansForm/${form._id}`;
     setHasSubmitted(true);
     if (emailsList.length > 0) {
       setSending(true);
