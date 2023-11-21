@@ -41,7 +41,7 @@ function NewForm() {
       const res = await postRefinedForm(refinedForm);
       if (res.status === 200) {
         dispatch(resetForm());
-        navigate("/app");
+        navigate("/dashboard");
       }
       if (res.status === 401) {
         await authUser();

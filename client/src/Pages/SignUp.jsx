@@ -23,7 +23,7 @@ function SignUp() {
     if (name && email && password) {
       const res = await signUp(name, email, password);
       if (res.status === 200) {
-        navigate("/app");
+        navigate("/dashboard");
       } else {
         setHasIncorrectCredentials(true);
         setServerErrorMessage(res.data.message);

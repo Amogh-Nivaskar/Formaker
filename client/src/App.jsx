@@ -25,6 +25,7 @@ import ViewSubmissions from "./Pages/PerPersonSubmissions";
 import PerPersonSubmissions from "./Pages/PerPersonSubmissions";
 import PerQuestionStats from "./Pages/PerQuestionStats";
 import SendByEmail from "./Pages/SendByEmail";
+import LandingPage from "./Pages/LandingPage";
 
 axios.defaults.withCredentials = true;
 
@@ -40,10 +41,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Root />}>
+          <Route path="app" element={<LandingPage />} />
           <Route path="signUp" element={<SignUp />} />
           <Route path="login" element={<Login />} />
           <Route
-            path="app"
+            path="dashboard"
             element={
               <Protected render={"a"}>
                 <Home />

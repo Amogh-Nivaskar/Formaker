@@ -41,7 +41,7 @@ function ViewFormDetails() {
   async function handleDelete(formId) {
     const res = await deleteForm(formId);
     if (res.status === 200) {
-      navigate("/app");
+      navigate("/dashboard");
     }
   }
 

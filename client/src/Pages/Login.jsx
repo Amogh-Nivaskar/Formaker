@@ -33,7 +33,7 @@ function Login() {
   }
 
   useEffect(() => {
-    if (user.isAuthenticated) navigate("/app", { replace: true });
+    if (user.isAuthenticated) navigate("/dashboard", { replace: true });
   }, [user.isAuthenticated, navigate]);
 
   useEffect(() => {
