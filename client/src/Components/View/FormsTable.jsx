@@ -149,7 +149,7 @@ function FormsTable({ displayForms, setDisplayForms }) {
                     idx % 2 === 0 ? "ring-indigo-100" : "ring-indigo-200"
                   } active:text-indigo-600 rounded-full hover:transition-all duration-500 ease-in-out`}
                 >
-                  <MdContentCopy fontSize={"1.7rem"} />
+                  <MdContentCopy fontSize={"1.5rem"} />
                 </button>
               </td>
               <td className="p-3 tracking-wide text-center">
@@ -161,7 +161,7 @@ function FormsTable({ displayForms, setDisplayForms }) {
                     idx % 2 === 0 ? "ring-indigo-100" : "ring-indigo-200"
                   } active:text-indigo-600 rounded-full hover:transition-all duration-500 ease-in-out`}
                 >
-                  <BsEyeFill fontSize={"1.7rem"} color="rgb(55 48 163)" />
+                  <BsEyeFill fontSize={"1.5rem"} color="rgb(55 48 163)" />
                 </button>
               </td>
             </tr>

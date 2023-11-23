@@ -34,7 +34,7 @@ function Option({ children, type, questionIdx, optionIdx }) {
             {type === "dropdown" && <p>{optionIdx + 1}.</p>}
 
             <input
-              className={`text-lg m-6 w-full focus:outline-none border-b-2 border-b-indigo-500`}
+              className={`text-base m-3 w-full focus:outline-none border-b-2 border-b-indigo-500`}
               defaultValue={value}
               onChange={(e) => {
                 dispatch(
@@ -52,7 +52,7 @@ function Option({ children, type, questionIdx, optionIdx }) {
             {type === "check-boxes" && <CheckBox disabled={true} />}
             {type === "multiple-choice" && <RadioButton disabled={true} />}
             {type === "dropdown" && <p>{optionIdx + 1}.</p>}
-            <p className="text-lg m-6 w-full">
+            <p className="text-base m-3 w-full">
               {value || (
                 <span className="text-slate-400">Please Enter Option</span>
               )}
@@ -64,10 +64,10 @@ function Option({ children, type, questionIdx, optionIdx }) {
       {isQuestionActive && isOptionActive && (
         <div className="flex items-center justify-center w-16">
           <button
-            className=" hover:bg-slate-100 p-2.5 rounded-full transition-all duration-300 ease-in-out"
+            className=" hover:bg-slate-100 p-2 rounded-full transition-all duration-300 ease-in-out"
             onClick={() => dispatch(deleteOption({ questionIdx, optionIdx }))}
           >
-            <TiDeleteOutline color="rgb(99 102 241)" fontSize={"2rem"} />
+            <TiDeleteOutline color="rgb(99 102 241)" fontSize={"1.5rem"} />
           </button>
         </div>
       )}

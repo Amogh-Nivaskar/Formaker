@@ -25,7 +25,7 @@ function Question({ questionObj, questionIdx }) {
 
   return (
     <div
-      className={`flex flex-col  bg-white rounded-md p-3  mt-9 ${
+      className={`flex flex-col  bg-white rounded-md p-2  mt-3 ${
         isQuestionActive
           ? "border-l-8 border-l-indigo-500 border-y-2 border-y-indigo-300 border-r-2 border-r-indigo-300 transition-all duration-400 ease-in-out"
           : "border-2 border-indigo-300 transition-all duration-300 ease-in-out"
@@ -33,10 +33,10 @@ function Question({ questionObj, questionIdx }) {
       key={questionObj.id}
       onClick={() => dispatch(activateQuestion(questionIdx))}
     >
-      <div className="p-6 flex flex-row justify-between">
+      <div className="p-2 flex flex-row justify-between">
         {isQuestionActive ? (
           <input
-            className="h-9 w-3/4 text-xl focus:outline-none focus:border-b-2 border-indigo-500 "
+            className="h-9 w-3/4 text-base focus:outline-none focus:border-b-2 border-indigo-500 "
             placeholder="Please Enter Question"
             value={question}
             onChange={(e) => {
@@ -46,7 +46,7 @@ function Question({ questionObj, questionIdx }) {
             }}
           />
         ) : (
-          <p className="text-xl border-0">
+          <p className="text-base border-0">
             {question || (
               <span className="text-slate-400">Please Enter Question</span>
             )}
@@ -68,16 +68,16 @@ function Question({ questionObj, questionIdx }) {
         </div>
       </div>
 
-      <div className="px-6 pb-3 flex justify-between flex-col">
+      <div className="px-2 pb-3 flex justify-between flex-col">
         <div className="">
           {type === "short-ans" && (
-            <p className="text-lg underline underline-offset-2 text-slate-400 decoration-slate-300">
+            <p className="text-base underline underline-offset-2 text-slate-400 decoration-slate-300">
               Short answer text
             </p>
           )}
 
           {type === "long-ans" && (
-            <p className="text-lg underline underline-offset-2 text-slate-400 decoration-slate-300">
+            <p className="text-base underline underline-offset-2 text-slate-400 decoration-slate-300">
               Long answer text
             </p>
           )}
@@ -92,7 +92,7 @@ function Question({ questionObj, questionIdx }) {
         {isQuestionActive && (
           <div className="flex gap-2">
             <div className="flex items-center p-6 gap-4 ">
-              <span className="text-lg text-slate-400">Required</span>
+              <span className="text-base text-slate-400">Required</span>
               <Switch
                 questionIdx={questionIdx}
                 startState={required}
@@ -105,7 +105,7 @@ function Question({ questionObj, questionIdx }) {
                 className=" p-3.5 rounded-full hover:bg-slate-100 transition-all duration-300 ease-in-out"
                 onClick={() => dispatch(deleteQuestionObj(questionIdx))}
               >
-                <AiFillDelete fontSize={"2rem"} color="rgb(100 116 139)" />
+                <AiFillDelete fontSize={"1.5rem"} color="rgb(100 116 139)" />
               </button>
             </div>
           </div>

@@ -5,25 +5,25 @@ function QuestionAns({ questionObj, answer }) {
   const { question, type, options, required } = questionObj;
 
   return (
-    <div className={`flex flex-col mt-9 p-3 shadow rounded-md bg-white`}>
-      <p className="text-xl border-0 m-3">
+    <div className={`flex flex-col mt-3 p-2 shadow rounded-md bg-white`}>
+      <p className="text-base border-0 m-3">
         {question} {required && <span className="text-rose-500 px-1">*</span>}
       </p>
 
       {type === "short-ans" &&
         (answer ? (
-          <p className="w-1/2 m-3 border-b-2 text-lg">{answer}</p>
+          <p className="w-1/2 mx-3 border-b-2 text-base">{answer}</p>
         ) : (
-          <p className="w-1/2 m-3 text-gray-500 text-lg border-b-2 italic">
+          <p className="w-1/2 mx-3 text-gray-500 text-base border-b-2 italic">
             Question left blank
           </p>
         ))}
 
       {type === "long-ans" &&
         (answer ? (
-          <p className="w-3/4 m-3 border-b-2 text-lg">{answer}</p>
+          <p className="w-3/4 m-3 border-b-2 text-base">{answer}</p>
         ) : (
-          <p className="w-3/4 m-3 text-gray-500 text-lg border-b-2 italic">
+          <p className="w-3/4 m-3 text-gray-500 text-base border-b-2 italic">
             Question left blank
           </p>
         ))}

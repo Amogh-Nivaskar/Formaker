@@ -38,12 +38,12 @@ function SignUp() {
   return (
     <div className="flex justify-center items-center h-screen">
       <div
-        className={`flex flex-col gap-10 border-2 p-9 ${
+        className={`flex flex-col gap-10 border-2 p-8 ${
           hasIncorrectCredentials ? "border-rose-500" : "border-indigo-200"
         } rounded-md bg-white shadow`}
       >
-        <h2 className="text-xl text-indigo-500  font-semibold">Sign Up</h2>
-        <form className="flex flex-col gap-10" onSubmit={handleSignupSubmit}>
+        <h2 className="text-lg text-indigo-500  font-semibold">Sign Up</h2>
+        <form className="flex flex-col gap-8" onSubmit={handleSignupSubmit}>
           <TextInput
             use={"Login/SignUp"}
             value={name}
@@ -70,7 +70,7 @@ function SignUp() {
             alarmCondition={isPasswordEmpty}
             alarmStatement={"Please Enter Password"}
           />
-          <Button type="FormButton">Submit</Button>
+          <Button type="FormButton">Sign Up</Button>
         </form>
         {hasIncorrectCredentials && (
           <p className="text-rose-500">{serverErrorMessage}</p>

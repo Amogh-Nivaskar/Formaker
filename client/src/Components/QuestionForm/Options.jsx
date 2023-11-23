@@ -48,7 +48,7 @@ function Options({ type, options, questionIdx }) {
                 );
               }}
             >
-              <span className="m-6 text-slate-400 text-lg hover:underline">
+              <span className="m-3 text-slate-400 text-base italic hover:underline">
                 Add option
               </span>
             </button>

@@ -60,14 +60,14 @@ function ViewFormDetails() {
 
         <SidebarItem
           type={"info"}
-          icon={<FaWpforms color="rgb(99 102 241)" fontSize={"1.5rem"} />}
+          icon={<FaWpforms color="rgb(99 102 241)" fontSize={"1.3rem"} />}
           label={"Questions"}
           info={form.questions.length}
         />
 
         <SidebarItem
           type={"info"}
-          icon={<PiNotepad color="rgb(99 102 241)" fontSize={"1.7rem"} />}
+          icon={<PiNotepad color="rgb(99 102 241)" fontSize={"1.3rem"} />}
           label={"Responses"}
           info={form.ansForms.length}
         />
@@ -76,38 +76,53 @@ function ViewFormDetails() {
 
         <SidebarItem
           type={"link"}
-          icon={<HiViewBoards color="rgb(99 102 241)" fontSize={"1.5rem"} />}
+          selectedIcon={
+            <HiViewBoards color="rgb(255 255 255)" fontSize={"1.3rem"} />
+          }
+          unselectedIcon={
+            <HiViewBoards color="rgb(99 102 241)" fontSize={"1.3rem"} />
+          }
           label={"View"}
           to="submissions"
         />
 
         <SidebarItem
           type={"link"}
-          icon={<VscGraph color="rgb(99 102 241)" fontSize={"1.5rem"} />}
+          unselectedIcon={
+            <VscGraph color="rgb(99 102 241)" fontSize={"1.3rem"} />
+          }
+          selectedIcon={
+            <VscGraph color="rgb(255 255 255)" fontSize={"1.3rem"} />
+          }
           label={"Stats"}
           to="stats"
         />
 
         <SidebarItem
           type={"link"}
-          icon={<AiOutlineMail color="rgb(99 102 241)" fontSize={"1.5rem"} />}
+          unselectedIcon={
+            <AiOutlineMail color="rgb(99 102 241)" fontSize={"1.3rem"} />
+          }
+          selectedIcon={
+            <AiOutlineMail color="rgb(255 255 255)" fontSize={"1.3rem"} />
+          }
           label={"Email"}
           to="sendByEmail"
         />
 
         <hr className="my-3" />
 
-        <div className="flex p-3">
+        <div className="flex p-2">
           <button
             onClick={() => copy(`${CLIENT_URL}/ansForm/${form._id}`)}
-            className={`hover:ring-4 active:ring-8 active:ring-indigo-400 hover:ring-indigo-200   rounded-full transition-all hover:duration-300 active:duration-150 ease-in-out`}
+            className={`hover:ring-4 active:ring-8 active:ring-indigo-400 hover:ring-indigo-200 rounded-full transition-all hover:duration-300 active:duration-150 ease-in-out`}
           >
-            <MdContentCopy color="rgb(99 102 241)" fontSize={"1.7rem"} />
+            <MdContentCopy color="rgb(99 102 241)" fontSize={"1.3rem"} />
           </button>
-          <span className="px-2 text-lg text-indigo-600">Form Link</span>
+          <span className="px-2 text-base text-indigo-600">Form Link</span>
         </div>
 
-        <div className="flex items-center p-3 justify-between ">
+        <div className="flex items-center p-2 justify-between ">
           {acceptingStatus ? (
             <Badge type={"accept"}>accepting</Badge>
           ) : (
@@ -121,10 +136,10 @@ function ViewFormDetails() {
           />
         </div>
 
-        <div className=" flex p-4 justify-center">
+        <div className=" flex p-2 justify-center">
           <button
             onClick={() => handleDelete(formId)}
-            className="uppercase p-2 font-bold bg-rose-200 rounded-md tracking-wide text-lg text-rose-500   hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out"
+            className="uppercase p-1.5 font-bold bg-rose-200 rounded-md tracking-wide text-base text-rose-500  hover:bg-rose-500 hover:text-white transition-all duration-300 ease-in-out"
           >
             Delete Form
           </button>

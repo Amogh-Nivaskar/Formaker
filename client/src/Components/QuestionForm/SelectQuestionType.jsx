@@ -13,22 +13,22 @@ function SelectQuestionType({
   return (
     <div className="relative">
       <button
-        className="bg-indigo-500 text-white p-2 w-52 rounded-md hover:bg-indigo-600"
+        className="bg-indigo-500 text-white p-1.5 w-52 rounded-md hover:bg-indigo-600"
         onClick={() => setIsSelectOpen(!isSelectOpen)}
       >
         {type ? (
-          <p>
+          <p className="text-sm">
             {type === "short-ans" && <span>Short Answer</span>}
             {type === "long-ans" && <span>Long Answer</span>}
             {type === "multiple-choice" && <span>Multiple Choice</span>}
             {type === "check-boxes" && <span>Check Boxes</span>}
-            {type === "dropdown" && <span>Drop Box</span>}
-            <span className="text-lg "> &#8595;</span>
+            {type === "dropdown" && <span>Dropdown</span>}
+            <span className="text-sm "> &#8595;</span>
           </p>
         ) : (
           <p>
-            <span> Select Question Type</span>{" "}
-            <span className="text-lg "> &#8595;</span>
+            <span className="text-sm"> Select Question Type</span>{" "}
+            <span className="text-base "> &#8595;</span>
           </p>
         )}
       </button>
@@ -37,7 +37,7 @@ function SelectQuestionType({
           isSelectOpen ? "flex flex-col" : "hidden"
         } `}
       >
-        <ul>
+        <ul className="text-sm">
           <li
             className="p-2 self-stretch hover:bg-indigo-400 hover:text-white cursor-pointer"
             onClick={() => {

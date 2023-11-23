@@ -84,10 +84,10 @@ function AnsForm() {
 
   return (
     <div>
-      <div className="flex w-screen justify-center">
+      <div className="flex w-screen justify-center mb-16">
         <div className="w-4/6">
-          <div className="flex justify-center pt-6">
-            <span className="ml-12 text-indigo-500  text-4xl transition-colors duration-300 ease-in-out hover:text-indigo-700 ">
+          <div className="flex justify-center pt-3">
+            <span className="ml-12 text-indigo-500  text-2xl transition-colors duration-300 ease-in-out  ">
               <Link to="/app">
                 <span className="font-pacifico">Formaker</span>
               </Link>
@@ -95,20 +95,20 @@ function AnsForm() {
           </div>
 
           {hasError ? (
-            <div className="flex justify-center items-center mt-32">
-              <p className="text-3xl text-indigo-500">{errorMsg} !!</p>
+            <div className="flex justify-center items-center mt-16">
+              <p className="text-lg text-indigo-500">{errorMsg} !!</p>
             </div>
           ) : (
-            <div className="mt-9">
+            <div className="mt-4">
               <p
-                className="h-16  text-3xl  font-semibold"
+                className="h-10  text-lg  font-semibold"
                 style={{ border: "2px solid transparent" }}
               >
                 {title}
               </p>
               {description && (
                 <p
-                  className="h-10 text-xl mb-14"
+                  className="h-8 text-base mb-3"
                   style={{ border: "2px solid transparent" }}
                 >
                   {description}
@@ -130,7 +130,7 @@ function AnsForm() {
                 </Button>
                 {triedSubmitting && (
                   <div className="flex items-center text-rose-500 ml-6 ">
-                    <span className="text-2xl">
+                    <span className="text-lg">
                       <BsExclamationCircle />
                     </span>
                     <span className="ml-3 text-lg">{errorMsg}</span>

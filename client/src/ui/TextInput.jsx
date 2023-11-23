@@ -13,7 +13,7 @@ function TextInput({
         <input
           className={`border-2 ${
             alarmCondition ? "border-rose-500" : "border-indigo-200"
-          } rounded-md h-13 w-full p-3  focus:outline-none focus:border-blue-700`}
+          } rounded-md h-13 w-full p-2  focus:outline-none focus:border-blue-700 text-base `}
           value={value}
           onChange={onChange}
           placeholder={placeholder}

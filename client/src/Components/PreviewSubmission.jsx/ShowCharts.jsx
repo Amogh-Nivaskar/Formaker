@@ -5,7 +5,7 @@ import PieChart from "./Charts/PieChart";
 function ShowCharts({ labels, answersFreq, chartLabel }) {
   const [selectedChart, setSelectedChart] = useState("bar");
   return (
-    <div className=" flex flex-col gap-6 justify-start items-center w-full h-screen">
+    <div className=" flex flex-col gap-3 justify-start items-center w-full h-screen">
       <div className=" flex w-1/6 justify-between rounded-full border-1 border-indigo-500">
         <div
           className={`flex justify-center flex-1 p-1 rounded-l-full cursor-pointer ${
@@ -15,7 +15,7 @@ function ShowCharts({ labels, answersFreq, chartLabel }) {
           } `}
           onClick={() => setSelectedChart("bar")}
         >
-          <span className={`text-lg tracking-wide font-semibold`}>
+          <span className={`text-sm tracking-wide font-semibold`}>
             Bar Chart
           </span>
         </div>
@@ -27,7 +27,7 @@ function ShowCharts({ labels, answersFreq, chartLabel }) {
           } `}
           onClick={() => setSelectedChart("pie")}
         >
-          <span className={`text-lg tracking-wide font-semibold`}>
+          <span className={`text-sm tracking-wide font-semibold`}>
             Pie Chart
           </span>
         </div>

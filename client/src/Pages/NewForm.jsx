@@ -52,9 +52,9 @@ function NewForm() {
   }
 
   return (
-    <div className="flex items-center justify-center w-screen">
-      <div className="  w-4/6">
-        <div className="text-2xl text-indigo-500 font-semibold mb-3">
+    <div className="flex items-center justify-center w-screen mb-8 mt-4">
+      <div className="w-4/6">
+        <div className="text-lg text-indigo-500 font-semibold mb-2">
           Make Form
         </div>
         <div className="border-2 border-indigo-100 rounded-md my-3">
@@ -65,7 +65,7 @@ function NewForm() {
           >
             {active.title ? (
               <input
-                className="h-16 w-full py-3 bg-indigo-100 border-b-2 border-indigo-600 text-2xl  my-6 focus: outline-none placeholder:text-2xl "
+                className="h-10 w-full py-2 bg-indigo-100 border-b-2 border-indigo-600 text-lg  my-3 focus: outline-none placeholder:text-lg "
                 style={{
                   borderLeft: "2px solid transparent",
                   borderRight: "2px solid transparent",
@@ -77,7 +77,7 @@ function NewForm() {
               />
             ) : (
               <p
-                className="h-16 py-3 text-2xl my-6"
+                className="h-10 py-2 text-lg my-3"
                 style={{ border: "2px solid transparent" }}
               >
                 {title || (
@@ -94,7 +94,7 @@ function NewForm() {
           >
             {active.description ? (
               <input
-                className="h-10 w-full py-3 bg-indigo-100 border-b-2 border-indigo-600 text-xl  my-6 mb-14 focus: outline-none placeholder:text-xl"
+                className="h-8 w-full py-2 bg-indigo-100 border-b-2 border-indigo-600 text-base  my-6  focus: outline-none placeholder:text-base"
                 style={{
                   borderLeft: "2px solid transparent",
                   borderRight: "2px solid transparent",
@@ -106,7 +106,7 @@ function NewForm() {
               />
             ) : (
               <p
-                className="h-10 py-3 text-xl my-6 mb-14"
+                className="h-8 py-2 text-base my-6"
                 style={{ border: "2px solid transparent" }}
               >
                 {description || (

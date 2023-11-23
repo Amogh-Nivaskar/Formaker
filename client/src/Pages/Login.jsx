@@ -44,12 +44,12 @@ function Login() {
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <div
-        className={`flex flex-col gap-10 border-2 p-6 ${
+        className={`flex flex-col gap-6 border-2 p-8 ${
           hasIncorrectCredentials ? "border-rose-500" : "border-indigo-200"
         }  rounded-md bg-white shadow`}
       >
-        <h2 className="text-xl text-indigo-500  font-semibold">Log In </h2>
-        <form className="flex flex-col gap-10" onSubmit={handleLoginSubmit}>
+        <h2 className="text-lg text-indigo-500  font-semibold">Log In </h2>
+        <form className="flex flex-col gap-8" onSubmit={handleLoginSubmit}>
           <TextInput
             use={"Login/SignUp"}
             value={email}
@@ -69,14 +69,14 @@ function Login() {
             alarmStatement={"Please Enter Password"}
           />
 
-          <Button type="FormButton">Submit</Button>
+          <Button type="FormButton">Log In</Button>
         </form>
         {hasIncorrectCredentials && (
           <div className="flex items-center justify-center overflow-hidden text-rose-500 ml-6 ">
-            <span className="text-2xl">
+            <span className="text-lg">
               <BsExclamationCircle />
             </span>
-            <span className="ml-3 text-lg whitespace-normal">
+            <span className="ml-2 text-lg whitespace-normal">
               {serverErrorMessage}
             </span>
           </div>

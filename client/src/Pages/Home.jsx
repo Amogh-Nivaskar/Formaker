@@ -44,7 +44,7 @@ function Home() {
   if (formsList.length === 0) {
     return (
       <div className="flex min-h-screen justify-center items-center">
-        <h3 className="mb-32 text-2xl text-indigo-600">
+        <h3 className="mb-32 text-lg text-indigo-600">
           Hi {user.name.toUpperCase()}, you currently don't have any forms.
         </h3>
       </div>
@@ -52,15 +52,15 @@ function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center text-lg mb-20">
+    <div className="flex flex-col items-center text-sm mb-20">
       <div className="w-3/4">
         <div className=" flex items-center justify-between">
           <div className="flex my-3 w-1/2">
             <span className="p-2 bg-white h-full border-y-2 border-l-2 border-indigo-200 rounded-l-full">
-              <AiOutlineSearch fontSize="1.7rem" color="rgb(55 48 163)" />
+              <AiOutlineSearch fontSize="1.3rem" color="rgb(55 48 163)" />
             </span>
             <input
-              className="p-2 text-lg focus:outline-none h-full w-full border-y-2 border-r-2 border-indigo-200 rounded-r-full"
+              className="p-2 text-sm focus:outline-none h-full w-full border-y-2 border-r-2 border-indigo-200 rounded-r-full"
               placeholder="Search by title..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -69,7 +69,7 @@ function Home() {
         </div>
         {displayForms.length === 0 ? (
           <div className="flex justify-center items-center mt-48">
-            <p className="text-2xl text-indigo-700">
+            <p className="text-lg text-indigo-700">
               No forms whose title contains "{search}"
             </p>
           </div>

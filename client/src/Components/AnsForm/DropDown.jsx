@@ -12,10 +12,10 @@ function DropDown({ options, ansIdx }) {
       <div className="relative">
         <button
           onClick={() => setIsSelectOpen(!isSelectOpen)}
-          className="bg-indigo-500 text-white p-2 w-52 rounded-md hover:bg-indigo-600"
+          className="bg-indigo-500 text-white p-2 w-52 rounded-md hover:bg-indigo-600 text-sm"
         >
-          <span>Select Answer</span>
-          <span className="text-lg "> &#8595;</span>
+          <span className="">Select Answer</span>
+          <span className=""> &#8595;</span>
         </button>
 
         <div
@@ -26,7 +26,7 @@ function DropDown({ options, ansIdx }) {
           {options.map((option, idx) => {
             return (
               <span
-                className="p-2 hover:bg-indigo-400 hover:text-white cursor-pointer"
+                className="p-2 hover:bg-indigo-400 hover:text-white cursor-pointer text-sm"
                 key={idx}
                 onClick={() => {
                   dispatch(setAns({ ansIdx, ans: idx }));
@@ -41,7 +41,7 @@ function DropDown({ options, ansIdx }) {
           })}
         </div>
       </div>
-      <span className="self-center ml-6 text-lg border-b-2 border-indigo-600">
+      <span className="self-center ml-6 text-base border-b-2 border-indigo-600">
         {options[ans] || (
           <span className="italic text-slate-500">Empty Option</span>
         )}

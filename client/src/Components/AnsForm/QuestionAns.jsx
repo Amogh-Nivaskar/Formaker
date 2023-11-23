@@ -29,7 +29,7 @@ function QuestionAns({ questionIdx, questionObj }) {
         hasMessage && "border-rose-500"
       } mt-9 p-3 shadow-md rounded-md bg-white`}
     >
-      <p className="text-xl border-0 m-3">
+      <p className="text-base border-0 m-2">
         {question || (
           <span className="italic text-slate-500">Empty Question</span>
         )}{" "}
@@ -41,7 +41,7 @@ function QuestionAns({ questionIdx, questionObj }) {
 
       {type === "short-ans" && (
         <input
-          className={`h-9 border-b-2 w-1/3 m-3 text-lg focus:outline-none focus:border-indigo-500 ${
+          className={`h-9 border-b-2 w-1/3 m-2 text-base focus:outline-none focus:border-indigo-500 ${
             hasMessage && "border-rose-500"
           } `}
           placeholder="Your Answer"
@@ -53,7 +53,7 @@ function QuestionAns({ questionIdx, questionObj }) {
       {type === "long-ans" && (
         <TextArea
           classes={
-            "focus:border-indigo-500 w-3/4 border-b-2 h-9 m-3 bg-white text-lg"
+            "focus:border-indigo-500 w-3/4 border-b-2 h-9 m-2 bg-white text-base"
           }
           placeholder="Your Answer"
           value={ans}
@@ -62,11 +62,11 @@ function QuestionAns({ questionIdx, questionObj }) {
       )}
 
       {hasMessage && (
-        <div className="flex m-3 items-center text-rose-500 ">
-          <span className="text-2xl">
+        <div className="flex m-2 items-center text-rose-500 ">
+          <span className="text-base">
             <BsExclamationCircle />
           </span>
-          <span className="ml-3 text-lg">This is a required question</span>
+          <span className="ml-3 text-base">This is a required question</span>
         </div>
       )}
     </div>
