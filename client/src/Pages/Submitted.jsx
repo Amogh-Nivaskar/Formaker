@@ -4,7 +4,7 @@ function Submitted() {
   return (
     <div>
       <div className="flex justify-center items-center p-6">
-        <span className="ml-12 text-indigo-500 text-xl transition-colors duration-300 ease-in-out hover:text-indigo-700 ">
+        <span className="ml-12 text-indigo-500 text-2xl transition-colors duration-300 ease-in-out ">
           <Link to="/app">
             <span className="font-pacifico">Formaker</span>
           </Link>
