@@ -6,7 +6,7 @@ function LandingPage() {
     <main>
       <section className="flex justify-center w-screen mt-4">
         <div className=" flex flex-col gap-y-8">
-          <p className="text-xl font-bold text-indigo-600">
+          <p className="text-3xl font-bold text-indigo-600">
             Create And Share Forms Easily !!
           </p>
           <div className="bg-indigo-500 text-lg text-slate-100 p-3 flex justify-center rounded-md cursor-pointer hover:text-xl hover:bg-indigo-200 hover:text-indigo-500 hover:font-bold transition-all ease-in-out duration-300">
@@ -18,6 +18,16 @@ function LandingPage() {
       </section>
 
       <section className="flex justify-center flex-col items-center gap-16 py-16">
+        <div className="flex w-3/4">
+          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pr-2">
+            Create forms with different types of questions
+          </p>
+
+          <div className=" shadow-lg w-full ">
+            <img src="Create_form.gif" alt="Create Form" />
+          </div>
+        </div>
+
         <div className="flex w-3/4">
           <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pr-2">
             Create forms with different types of questions
