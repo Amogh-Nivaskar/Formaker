@@ -19,7 +19,7 @@ function LandingPage() {
 
       <section className="flex justify-center flex-col items-center gap-16 py-16">
         <div className="flex w-3/4">
-          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 ">
+          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pr-2">
             Create forms with different types of questions
           </p>
 
@@ -33,7 +33,7 @@ function LandingPage() {
             <img src="Send_Email.jpg" alt="Send Email" />
           </div>
 
-          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 ">
+          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pl-2 ">
             Share form link via Email
           </p>
         </div>
@@ -43,7 +43,7 @@ function LandingPage() {
         </div>
 
         <div className="flex w-3/4">
-          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 ">
+          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pr-2 ">
             Per Individual Response
           </p>
           <div className=" shadow-lg w-full ">
@@ -62,7 +62,7 @@ function LandingPage() {
             />
           </div>
 
-          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 ">
+          <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pl-2 ">
             Per Individual Question
           </p>
         </div>
