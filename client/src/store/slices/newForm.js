@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useAuth } from "../../contexts/UserAuth";
 
-
 const initialQuestion = {
   question: "",
   type: "",
@@ -46,7 +45,7 @@ const newFormSlice = createSlice({
 
       state.questions.push(newQuestion);
 
-      const activeQuestionIdx = state.questions.length;
+      const activeQuestionIdx = state.questions.length - 1;
       state.active.questionIdx = activeQuestionIdx;
     },
     deleteQuestionObj(state, action) {
