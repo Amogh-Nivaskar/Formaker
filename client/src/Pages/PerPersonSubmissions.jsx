@@ -29,7 +29,10 @@ function PerPersonSubmissions() {
 
   if (form.ansForms.length === 0) {
     return (
-      <span className="text-lg pr-16 text-indigo-500 w-full flex justify-center items-center">
+      <span
+        className="text-lg pr-16 text-indigo-500 w-full h-screen
+       flex justify-center items-center"
+      >
         No Responses Yet
       </span>
     );

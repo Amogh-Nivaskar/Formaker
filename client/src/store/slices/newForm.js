@@ -146,20 +146,23 @@ export async function postRefinedForm(refinedForm) {
 }
 
 export async function deleteForm(formId) {
-  const token = localStorage.getItem("token");
-  const res = await axios.delete(`${BASE_URL}/questionForm/${formId}`, null, {
-    headers: {
-      Authorization: `${token}`,
-    },
-  });
+  try {
+    const token = localStorage.getItem("token");
+    const res = await axios.delete(`${BASE_URL}/questionForm/${formId}`, {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
 
-  return res;
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getFormsList() {
   const token = localStorage.getItem("token");
   try {
-    console.log(token);
     const res = await axios
       .get(`${BASE_URL}/questionForm/forms`, {
         headers: {

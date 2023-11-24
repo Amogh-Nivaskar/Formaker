@@ -6,7 +6,7 @@ function LandingPage() {
     <main>
       <section className="flex justify-center w-screen mt-4">
         <div className=" flex flex-col gap-y-8">
-          <p className="text-3xl font-bold text-indigo-600">
+          <p className="text-3xl font-black indigo_gradient">
             Create And Share Forms Easily !!
           </p>
           <div className="bg-indigo-500 text-lg text-slate-100 p-3 flex justify-center rounded-md cursor-pointer hover:text-xl hover:bg-indigo-200 hover:text-indigo-500 hover:font-bold transition-all ease-in-out duration-300">

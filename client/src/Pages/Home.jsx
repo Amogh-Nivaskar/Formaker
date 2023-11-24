@@ -74,7 +74,7 @@ function Home() {
             </p>
           </div>
         ) : (
-          <div className="hidden md:flex">
+          <div className="">
             <FormsTable
               displayForms={displayForms}
               setDisplayForms={setDisplayForms}
