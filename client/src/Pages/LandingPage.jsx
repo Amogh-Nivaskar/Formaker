@@ -24,11 +24,11 @@ function LandingPage() {
           </p>
 
           <div className=" shadow-lg w-full ">
-            <img src="Create_form.gif" alt="Create Form" />
+            <img src="Create_form2.gif" alt="Create Form" />
           </div>
         </div>
 
-        <div className="flex w-3/4">
+        {/* <div className="flex w-3/4">
           <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pr-2">
             Create forms with different types of questions
           </p>
@@ -36,11 +36,11 @@ function LandingPage() {
           <div className=" shadow-lg w-full ">
             <img src="Create_Form5.jpg" alt="Create Form" />
           </div>
-        </div>
+        </div> */}
 
         <div className="flex w-3/4">
           <div className=" shadow-lg w-full ">
-            <img src="Send_Email.jpg" alt="Send Email" />
+            <img src="Send_email.gif" alt="Send Email" />
           </div>
 
           <p className="flex items-center justify-center font-bold text-xl text-indigo-500 w-1/2 pl-2 ">
@@ -58,7 +58,7 @@ function LandingPage() {
           </p>
           <div className=" shadow-lg w-full ">
             <img
-              src="Per_Response.jpg"
+              src="Per_Response.gif"
               alt="View Responses per individual response"
             />
           </div>
@@ -67,7 +67,7 @@ function LandingPage() {
         <div className="flex w-3/4">
           <div className=" shadow-lg w-full ">
             <img
-              src="Per_Question.jpg"
+              src="Per_Question.gif"
               alt="View Responses per individual question"
             />
           </div>

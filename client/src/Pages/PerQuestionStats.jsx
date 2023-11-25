@@ -32,7 +32,7 @@ function PerQuestionStats() {
         <div className="relative">
           <button
             onClick={() => setIsSelectOpen(!isSelectOpen)}
-            className="bg-indigo-200 w-3/4 text-indigo-900 p-2 rounded-md "
+            className="bg-indigo-200 w-3/4 text-indigo-900 p-2 rounded-md mt-5 "
           >
             <div className="flex justify-between items-center transition-all duration-300 ease-in-out">
               <span className="text-base">
@@ -110,7 +110,7 @@ function PerQuestionStats() {
         />
       )}
 
-      <div className="flex justify-center items-center gap-4  fixed bottom-3 bg-indigo-300 p-2 rounded-full ">
+      <div className="flex justify-center items-center gap-4  fixed bottom-8 bg-indigo-300 p-2 rounded-full ">
         <button
           disabled={questionIdx === 0}
           onClick={() => dispatch(setQuestionIdx(questionIdx - 1))}

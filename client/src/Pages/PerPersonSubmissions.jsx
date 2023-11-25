@@ -47,14 +47,14 @@ function PerPersonSubmissions() {
     <div className=" flex flex-col justify-center items-center relative pb-32">
       <div className="w-3/4">
         <p
-          className="h-10  text-lg  font-semibold"
+          className="h-10  text-lg  font-semibold mt-5"
           style={{ border: "2px solid transparent" }}
         >
           {title}
         </p>
         {description && (
           <p
-            className="h-6 text-base mb-14"
+            className="h-6 text-base mb-10"
             style={{ border: "2px solid transparent" }}
           >
             {description}
@@ -70,7 +70,7 @@ function PerPersonSubmissions() {
           );
         })}
       </div>
-      <div className="flex justify-between items-center gap-4  fixed bottom-3 bg-indigo-300 p-2 rounded-full ">
+      <div className="flex justify-between items-center gap-4  fixed bottom-8 bg-indigo-300 p-2 rounded-full ">
         <button
           disabled={responseIdx === 0}
           onClick={() => setIdx((idx) => idx - 1)}
@@ -97,7 +97,7 @@ function PerPersonSubmissions() {
               setIdx(e.target.value);
             }}
           />
-          <span className="px-[5px]"> /</span>
+          <span className="px-[5px]"> / </span>
           <span className="text-base">{ansForms.length}</span>
         </div>
 
