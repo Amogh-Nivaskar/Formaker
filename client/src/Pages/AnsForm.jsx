@@ -87,9 +87,9 @@ function AnsForm() {
       <div className="flex w-screen justify-center mb-16">
         <div className="w-4/6">
           <div className="flex justify-center pt-3">
-            <span className="ml-12 text-indigo-500  text-2xl transition-colors duration-300 ease-in-out  ">
+            <span className="ml-12 text-indigo-500  text-3xl transition-colors duration-300 ease-in-out  ">
               <Link to="/app">
-                <span className="font-pacifico">Formaker</span>
+                <span className="font-pacifico indigo_gradient">Formaker</span>
               </Link>
             </span>
           </div>

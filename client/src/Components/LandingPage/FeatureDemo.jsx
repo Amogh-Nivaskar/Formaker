@@ -24,7 +24,6 @@ function FeatureDemo({ description, textSide, gif, alt }) {
   useEffect(() => {
     if (isPInView) {
       mainControl.start("animate");
-      console.log(isPInView);
     }
   }, [isPInView, mainControl]);
 
@@ -111,6 +110,36 @@ function FeatureDemo({ description, textSide, gif, alt }) {
       </motion.div>
     );
   }
+
+  if (textSide === "Center")
+    return (
+      <motion.div
+        ref={pRef}
+        className="m-3 w-full flex justify-center overflow-hidden"
+        initial="initial"
+        animate={mainControl}
+      >
+        <motion.p
+          className="font-bold text-xl text-indigo-500 "
+          variants={{
+            initial: {
+              y: 100,
+              opacity: 0,
+            },
+            animate: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                ease: [0.6, 0.01, 0.05, 0.95],
+                duration: 1,
+              },
+            },
+          }}
+        >
+          {description}
+        </motion.p>
+      </motion.div>
+    );
 }
 
 export default FeatureDemo;

@@ -20,7 +20,7 @@ input::-webkit-inner-spin-button {
 }
 
 .indigo_gradient {
-  @apply bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent;
 }
 
 .waves {
@@ -42,4 +42,32 @@ input::-webkit-inner-spin-button {
 
 .waves .shape-fill {
   fill: #6366f1;
+}
+
+.wave {
+  position: relative;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 91px;
+}
+
+.wave .shape-fill {
+  fill: #6366f1;
+}
+
+::selection {
+  color: #fff; /* Change this to the desired text color for highlighted text */
+  background-color: rgb(
+    217 70 239
+  ); /* Change this to the desired background color for highlighted text */
 }
