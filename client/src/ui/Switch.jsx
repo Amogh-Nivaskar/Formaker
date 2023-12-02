@@ -12,16 +12,20 @@ function Switch({ questionIdx, startState, type, formId, setStatus }) {
     await toggleAcceptingStatus(formId);
   }
 
-  useEffect(() => {
-    if (type === "toggleRequired") {
-      dispatch(toggleRequired(questionIdx));
-    }
-  }, [isOn, dispatch, questionIdx, type]);
+  // useEffect(() => {
+  //   if (type === "toggleRequired") {
+  //     dispatch(toggleRequired(questionIdx));
+  //   }
+  // }, [isOn, dispatch, questionIdx, type]);
 
   if (type === "toggleRequired") {
     return (
       <div
-        onClick={() => setIsOn(!isOn)}
+        // onClick={() => setIsOn(!isOn)}
+        onClick={() => {
+          setIsOn(!isOn);
+          dispatch(toggleRequired(questionIdx));
+        }}
         className={`flex w-8 h-4  rounded-full  ${
           isOn ? "bg-indigo-500" : "bg-slate-600"
         } transition-all duration-300 ease-in-out`}

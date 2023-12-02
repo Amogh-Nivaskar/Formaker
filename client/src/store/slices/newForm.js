@@ -244,6 +244,9 @@ export const getRefinedForm = (form) => {
     description: form.description,
     questions: form.questions.map((q) => {
       const { question, type, options, required } = q;
+      if (type === "") {
+        return { question, type: "short-ans", options, required };
+      }
       return { question, type, options, required };
     }),
   };

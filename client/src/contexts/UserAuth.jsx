@@ -1,8 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 
-
-
 const initialState = {
   id: "",
   name: "",
